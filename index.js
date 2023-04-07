@@ -42,7 +42,7 @@ function download(href, encoding, onsuccess, onerror) {
     if (encoding) {
       res.setEncoding(encoding);
       if (encoding == 'base64') {
-        data = 'data:' + mime.lookup(href) + ';base64,';
+        data = 'data:' + mime.getType(href) + ';base64,';
       }
     }
     res.on('data', function(chunk) { data += chunk; });
